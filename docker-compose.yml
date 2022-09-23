@@ -29,14 +29,3 @@ services:
     networks:
       - drone-net
 
-
-  drone-convert-paths-changed:
-    container_name: dcpc
-    image: meltwater/drone-convert-pathschanged
-    depends_on:
-      - drone
-    env_file:
-      - dcpc.env
-    restart: always
-    networks:
-      - drone-net

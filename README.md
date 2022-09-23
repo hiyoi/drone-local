@@ -1,6 +1,6 @@
 ## drone local
 
-### register github oath app
+### register github oauth app
 
 https://docs.drone.io/server/provider/github/
 

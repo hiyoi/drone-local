@@ -6,7 +6,7 @@ networks:
 services:
   drone:
     container_name: drone
-    image: drone/drone:2.13
+    image: drone/drone:latest
     env_file:
       - drone.env
     volumes:

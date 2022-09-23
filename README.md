@@ -1,10 +1,10 @@
 ## drone local
 
-### install
+### install and start
 
 - follow the [guide](https://docs.drone.io/server/provider/github/) and fill the mask in *.env file
 
-- docker-compose up -d
+- `docker-compose up -d`
 
 
 

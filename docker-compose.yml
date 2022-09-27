@@ -6,7 +6,7 @@ networks:
 services:
   drone:
     container_name: drone
-    image: drone/drone:latest
+    image: drone/drone:2.13
     env_file:
       - drone.env
     volumes:
@@ -26,6 +26,27 @@ services:
       - runner.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - drone-net
+
+
+  drone-convert-paths-changed:
+    container_name: dcpc
+    image: meltwater/drone-convert-pathschanged
+    depends_on:
+      - drone
+    env_file:
+      - dcpc.env
+    restart: always
+    networks:
+      - drone-net
+
+  drone-tree-config:
+    container_name: dtc
+    image: bitsbeats/drone-tree-config
+    env_file:
+      - dtc.env
+    restart: always
     networks:
       - drone-net
 
